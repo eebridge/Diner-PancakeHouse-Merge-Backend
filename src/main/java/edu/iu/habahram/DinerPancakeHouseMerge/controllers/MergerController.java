@@ -17,27 +17,26 @@ import java.util.List;
 @RequestMapping("/merger")
 public class MergerController {
 
-    PancakeHouseRepository pancakeHouseRepository;
     DinerRepository dinerRepository;
+    PancakeHouseRepository pancakeHouseRepository;
 
-    public MergerController(PancakeHouseRepository pancakeHouseRepository, DinerRepository dinerRepository) {
-        this.pancakeHouseRepository = pancakeHouseRepository;
+    public MergerController(DinerRepository dinerRepository, PancakeHouseRepository pancakeHouseRepository) {
         this.dinerRepository = dinerRepository;
+        this.pancakeHouseRepository = pancakeHouseRepository;
     }
 
     @GetMapping
     public List<MenuItem> get() {
-        List<MenuItem> items = new ArrayList<>();
+        List<MenuItem> menuItems = new ArrayList<>();
         Iterator<MenuItem> lunchItems = dinerRepository.getTheMenuIterator();
         while(lunchItems.hasNext()) {
-            items.add(lunchItems.next());
+            menuItems.add(lunchItems.next());
         }
 
         Iterator<MenuItem> breakfastItems = pancakeHouseRepository.getTheMenuIterator();
         while(breakfastItems.hasNext()) {
-            items.add(breakfastItems.next());
+            menuItems.add(breakfastItems.next());
         }
-
-        return items;
+        return menuItems;
     }
 }

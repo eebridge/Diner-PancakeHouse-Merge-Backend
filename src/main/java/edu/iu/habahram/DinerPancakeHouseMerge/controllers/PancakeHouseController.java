@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class PancakeHouseController {
     }
 
     @GetMapping
-    public List<MenuItem> get() {
-        return repository.getTheMenu();
+    public Iterator<MenuItem> get() {
+        return repository.getTheMenuIterator();
     }
 }

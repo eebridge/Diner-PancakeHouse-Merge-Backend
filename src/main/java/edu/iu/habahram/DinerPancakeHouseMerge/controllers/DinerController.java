@@ -1,5 +1,8 @@
 package edu.iu.habahram.DinerPancakeHouseMerge.controllers;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import edu.iu.habahram.DinerPancakeHouseMerge.model.MenuItem;
 import edu.iu.habahram.DinerPancakeHouseMerge.repository.DinerRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,7 +22,7 @@ public class DinerController {
     }
 
     @GetMapping
-    public MenuItem[] get() {
-        return repository.getTheMenu();
+    public Iterator<MenuItem> get() {
+        return repository.getTheMenuIterator();
     }
 }

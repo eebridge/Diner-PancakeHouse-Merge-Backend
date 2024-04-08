@@ -33,6 +33,6 @@ jobs:
 
       - name: Build and push the image
         run: |
-          docker login --username eebridge --password-stdin ${{secrets.ACCESS_TOKEN}} ghcr.io
+          docker login --username eebridge --password mypasswordismilkdud253 ghcr.io
           docker build -t ghcr.io/eebridge/diner-pancakehouse-merge:latest --file Dockerfile .  
           docker push ghcr.io/eebridge/diner-pancakehouse-merge:latest

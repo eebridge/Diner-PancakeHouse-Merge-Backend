@@ -51,9 +51,8 @@ public class PancakeHouseMenu extends Menu {
         return  stringBuilder.toString();
     }
 
-    public Iterator<MenuItem> createIterator() {
-
-        return menuItems.iterator();
+    public Iterator<MenuComponent> createIterator() {
+        return new CompositeIterator(menuComponents.iterator());
     }
 
     // other menu methods here

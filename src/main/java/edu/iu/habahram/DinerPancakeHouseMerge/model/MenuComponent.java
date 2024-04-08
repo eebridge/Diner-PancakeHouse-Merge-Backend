@@ -1,5 +1,7 @@
 package edu.iu.habahram.DinerPancakeHouseMerge.model;
 
+import java.util.Iterator;
+
 public abstract class MenuComponent {
     public void add(MenuComponent menuComponent) {
         throw new UnsupportedOperationException();
